@@ -11,10 +11,7 @@
   <img id="poe2-beta-date" src="beta.png" alt="">
 
   <div id="countdown">
-    <div id="days"></div>
-    <div id="hour"></div>
-    <div id="minutes"></div>
-    <div id="seconds"></div>
+    <div id="seconds" style=""></div>
   </div>
 
   <script>
@@ -22,10 +19,7 @@
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
-    document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hour").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("seconds").innerHTML = Math.floor(distance / 1000);
   }, 1000);
   </script>
 
