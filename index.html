@@ -8,18 +8,43 @@
 </head>
 <body>
   <img id="poe2-top-section-logo" src="logo.png" alt="">
-  <img id="poe2-beta-date" src="beta.png" alt="">
 
-  <div id="countdown">
-    <div id="seconds" style=""></div>
+  <div class="closed-time-text">
+    Nov 15 2024
+  </div>
+
+  <div id="countdown2" class="countdown">
+    <div id="seconds2" style="" class="countdown-div"></div>
+  </div>
+
+  <img id="poe2-beta-date" src="june7.png" alt="" class="image">
+
+  <div id="countdown" class="countdown">
+    <div id="seconds" style="" class="countdown-div"></div>
+  </div>
+  <div class="progress">
+    <progress id="progress"  max="100" value="70">70%</progress>
+  </div>
+  <div class="progressLabel">
+    <label id="progressLabel"></label>
   </div>
 
   <script>
   var countDownDate = new Date("Jun 7, 2024 19:00:00Z").getTime();
+  var countDownDate2 = new Date("Nov 15, 2024 20:00:00Z").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
     document.getElementById("seconds").innerHTML = Math.floor(distance / 1000);
+
+    var distance2 = countDownDate2 - now;
+    document.getElementById("seconds2").innerHTML = Math.floor(distance2 / 1000);
+
+    let percent = (now - countDownDate) / (countDownDate2 - countDownDate) * 100;
+
+    document.getElementById("progress").value = percent
+    document.getElementById("progressLabel").textContent =Math.round((percent + Number.EPSILON) * 100) / 100 + '%'
+
   }, 1000);
   </script>
 
